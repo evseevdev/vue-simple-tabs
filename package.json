@@ -1,0 +1,23 @@
+{
+  "name": "vue-tabs",
+  "version": "1.0.0",
+  "description": "Tabs component for vue.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evseevdev/vue-tabs.git"
+  },
+  "keywords": [
+    "vue.js",
+    "tabs"
+  ],
+  "author": "Vladimir Evseev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evseevdev/vue-tabs/issues"
+  },
+  "homepage": "https://github.com/evseevdev/vue-tabs#readme"
+}
