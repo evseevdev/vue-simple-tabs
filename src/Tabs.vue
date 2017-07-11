@@ -27,6 +27,8 @@
     mounted() {
       this.select(0);
       this.activeTabIndex = this.getInitialActiveTab();
+
+      this.$root.$on('select-tab', index => this.select(index));
     },
 
     methods: {
