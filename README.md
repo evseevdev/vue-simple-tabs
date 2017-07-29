@@ -16,7 +16,7 @@ yarn add vue-simple-tabs
 
 ```html
 <template>
-  <tabs class="faq-section__tabs">
+  <tabs>
     <tab title="Tab 1" active="true">
       Tab 1 content
     </tab>
