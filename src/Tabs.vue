@@ -38,7 +38,10 @@
       },
 
       select(index) {
-        this.activeTabIndex = index;
+        const tab = this.tabList[index];
+        if (!tab.isDisabled) {
+          this.activeTabIndex = index;
+        }
       },
 
       getInitialActiveTab() {

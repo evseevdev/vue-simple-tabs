@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isActive">
+  <div v-if="isActive" :class="{ 'disabled': disabled }">
     <slot></slot>
   </div>
 </template>
@@ -9,17 +9,22 @@
     props: {
       title: { 
         type: String, 
-        required: true 
+        required: true
       },
       active: { 
         type: [ Boolean, String ],
         default: false
       },
+      disabled: {
+        type: [ Boolean, String ],
+        default: false
+      }
     },
 
     data() {
       return {
         isActive: this.active,
+        isDisabled: this.disabled
       }
     },
 
