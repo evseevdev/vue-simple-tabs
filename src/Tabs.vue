@@ -4,7 +4,7 @@
       <li 
         v-for="(tab, index) in tabList" 
         :key="index" 
-        :class="{'active': isActive(index)}" 
+        :class="{'active': isActive(index), 'disabled': tab.disabled}"
         @click="select(index)">
         {{ tab.title }}
       </li>
