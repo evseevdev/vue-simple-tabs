@@ -45,7 +45,8 @@
       },
 
       getInitialActiveTab() {
-        return this.tabList.reduceRight((activeTabIndex, tab, index) => tab.active ? index : activeTabIndex);
+        const index = this.tabList.findIndex(tab => tab.active);
+        return index === -1 ? 0 : index;
       }
 
     }
