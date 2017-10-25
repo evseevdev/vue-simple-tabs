@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isActive" :class="{ 'disabled': disabled }">
+  <div v-if="isActive" :class="{ 'disabled': isDisabled }">
     <slot></slot>
   </div>
 </template>
@@ -7,17 +7,20 @@
 <script>
   export default {
     props: {
-      title: { 
-        type: String, 
+      title: {
+        type: String,
         required: true
       },
-      active: { 
+      active: {
         type: [ Boolean, String ],
         default: false
       },
       disabled: {
         type: [ Boolean, String ],
         default: false
+      },
+      dataAttrs: {
+        type: Object
       }
     },
 
@@ -37,10 +40,13 @@
         return this.$parent.tabList.indexOf(this);
       }
     },
-    
+
     watch: {
       '$parent.activeTabIndex' (index) {
         this.isActive = this.index === index;
+      },
+      disabled() {
+        this.isDisabled = this.disabled;
       }
     }
   }

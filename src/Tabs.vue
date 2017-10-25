@@ -1,9 +1,10 @@
 <template>
   <div>
     <ul>
-      <li 
-        v-for="(tab, index) in tabList" 
-        :key="index" 
+      <li
+        v-for="(tab, index) in tabList"
+        v-bind="tab.dataAttrs"
+        :key="index"
         :class="{'active': isActive(index), 'disabled': tab.disabled}"
         @click="select(index)">
         {{ tab.title }}
