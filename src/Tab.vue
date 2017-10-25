@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isActive" :class="{ 'disabled': disabled }">
+  <div v-if="isActive" :class="{ 'disabled': isDisabled }">
     <slot></slot>
   </div>
 </template>
@@ -41,6 +41,9 @@
     watch: {
       '$parent.activeTabIndex' (index) {
         this.isActive = this.index === index;
+      },
+      disabled() {
+        this.isDisabled = this.disabled;
       }
     }
   }
