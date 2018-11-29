@@ -43,6 +43,8 @@
         if (!tab.isDisabled) {
           this.activeTabIndex = index;
         }
+
+        this.$emit('changed', tab);
       },
 
       getInitialActiveTab() {
